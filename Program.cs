@@ -1,11 +1,12 @@
 using Microsoft.EntityFrameworkCore;
+using CourseWorkFactoryAutomatization.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-builder.Services.AddDbContext<AppContext>(opt =>
+builder.Services.AddDbContext<CourseWorkContext>(opt =>
 {
     opt.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"));
 });

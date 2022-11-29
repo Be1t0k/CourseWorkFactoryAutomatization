@@ -2,7 +2,7 @@
 
 namespace CourseWorkFactoryAutomatization.Models
 {
-    public class AppContext : DbContext
+    public class CourseWorkContext : DbContext
     {
         public DbSet<Admin> Admins { get; set; }
         public DbSet<Accountant> Accountants { get; set; }
@@ -12,7 +12,7 @@ namespace CourseWorkFactoryAutomatization.Models
         public DbSet<DetailCatalog> DetailCatalogs { get; set; }
         public DbSet<Technic> Technics { get; set; }
         public DbSet<Detail> Details { get; set; }
-        public AppContext(DbContextOptions<AppContext> options) : base(options)
+        public CourseWorkContext(DbContextOptions<CourseWorkContext> options) : base(options)
         {
 
         }

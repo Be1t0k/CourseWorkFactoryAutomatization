@@ -27,5 +27,27 @@ namespace CourseWorkFactoryAutomatization.Controllers
             workContext.SaveChanges();
             return Redirect("/");
         }
+
+        public IActionResult GetDetails()
+        {
+            using (var context = workContext) 
+            {
+                return View(context.Details.ToList());
+            }
+        }
+
+
+        /*[HttpPost]
+        public IActionResult DeleteDetail(int id) {
+            var delDet = workContext.Details.Where(d => d.Id == id).First();
+            workContext.Details.Remove(delDet);
+            workContext.SaveChanges();
+            return Redirect("/");
+        }
+        [HttpGet]
+        public IActionResult DeleteDetial()
+        {
+            return View();
+        }*/
     }
 }

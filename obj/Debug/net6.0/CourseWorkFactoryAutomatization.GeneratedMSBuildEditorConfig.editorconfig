@@ -20,8 +20,20 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGV0YWlsXENyZWF0ZURldGFpbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/vlsu_works/CourseWorkFactoryAutomatization/Views/Detail/DeleteDetail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGV0YWlsXERlbGV0ZURldGFpbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/vlsu_works/CourseWorkFactoryAutomatization/Views/Detail/EditDetail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGV0YWlsXEVkaXREZXRhaWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/vlsu_works/CourseWorkFactoryAutomatization/Views/Detail/GetDetails.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGV0YWlsXEdldERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/vlsu_works/CourseWorkFactoryAutomatization/Views/Detail/InfoDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGV0YWlsXEluZm9EZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/vlsu_works/CourseWorkFactoryAutomatization/Views/Home/Index.cshtml]
@@ -42,6 +54,14 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/vlsu_works/CourseWorkFactoryAutomatization/Views/Technic/CreateTechnic.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVjaG5pY1xDcmVhdGVUZWNobmljLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/vlsu_works/CourseWorkFactoryAutomatization/Views/Technic/GetTechnics.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVjaG5pY1xHZXRUZWNobmljcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/vlsu_works/CourseWorkFactoryAutomatization/Views/Technic/InfoTechnics.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVjaG5pY1xJbmZvVGVjaG5pY3MuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/vlsu_works/CourseWorkFactoryAutomatization/Views/_ViewImports.cshtml]

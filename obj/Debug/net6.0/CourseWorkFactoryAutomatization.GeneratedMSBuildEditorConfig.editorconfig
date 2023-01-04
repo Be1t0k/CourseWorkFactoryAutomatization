@@ -24,16 +24,16 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGV0YWlsQ2F0YWxvZ1xEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/vlsu_works/CourseWorkFactoryAutomatization/Views/DetailCatalog/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGV0YWlsQ2F0YWxvZ1xEZXRhaWxzLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
 [D:/vlsu_works/CourseWorkFactoryAutomatization/Views/DetailCatalog/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGV0YWlsQ2F0YWxvZ1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/vlsu_works/CourseWorkFactoryAutomatization/Views/DetailCatalog/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGV0YWlsQ2F0YWxvZ1xJbmRleC5jc2h0bWw=
+[D:/vlsu_works/CourseWorkFactoryAutomatization/Views/DetailCatalog/GetDetailCatalog.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGV0YWlsQ2F0YWxvZ1xHZXREZXRhaWxDYXRhbG9nLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/vlsu_works/CourseWorkFactoryAutomatization/Views/DetailCatalog/InfoDetailCatalog.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGV0YWlsQ2F0YWxvZ1xJbmZvRGV0YWlsQ2F0YWxvZy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/vlsu_works/CourseWorkFactoryAutomatization/Views/Detail/CreateDetail.cshtml]

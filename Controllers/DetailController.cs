@@ -42,8 +42,10 @@ namespace CourseWorkFactoryAutomatization.Controllers
         {
             using (var context = workContext) 
             {
-                return View(context.Details.Include(j => j.Technic)
-                       .Include(u => u.DetailCatalog).ToList());
+                return View(context.Details
+                    .Include(j => j.Technic)
+                    .Include(u => u.DetailCatalog)
+                    .ToList());
             }
         }
         public IActionResult EditDetail(Detail d)

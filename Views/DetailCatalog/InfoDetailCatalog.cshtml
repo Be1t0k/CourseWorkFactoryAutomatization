@@ -1,0 +1,68 @@
+﻿@model CourseWorkFactoryAutomatization.Models.DetailCatalog
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>InfoDetailCatalog</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DateCreate)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DateCreate)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="EditDetailCatalog" asp-route-id="@Model?.Id">Edit</a> |
+    <a asp-action="GetDetailCatalog">Back to List</a>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Title
+            </th>
+            <th>
+                Cost
+            </th>
+            <th>
+                TechnicId
+            </th>
+            <th>
+                Technic
+            </th>
+            <th>
+                DetailCatalog
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Details)
+        {
+            <tr>
+                <td>
+                    @item.Title
+                </td>
+                <td>
+                    @item.Cost
+                </td>
+                <td>
+                    @item.Technic.Id
+                </td>
+                <td>
+                    @item.Technic.Title
+                </td>
+                <td>
+                    @item.DetailCatalog.Id
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

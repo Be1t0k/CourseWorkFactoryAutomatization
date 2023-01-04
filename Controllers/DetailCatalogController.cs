@@ -11,68 +11,56 @@ namespace CourseWorkFactoryAutomatization.Controllers
 {
     public class DetailCatalogController : Controller
     {
-        private readonly CourseWorkContext _context;
+        private readonly CourseWorkContext workContext;
 
-        public DetailCatalogController(CourseWorkContext context)
+        public DetailCatalogController(CourseWorkContext courseWorkContext)
         {
-            _context = context;
+            workContext = courseWorkContext;
         }
 
         // GET: DetailCatalog
-        public async Task<IActionResult> Index()
+        public IActionResult GetDetailCatalog()
         {
-              return View(await _context.DetailCatalogs.ToListAsync());
+              return View(workContext.DetailCatalogs.ToList());
         }
 
         // GET: DetailCatalog/Details/5
-        public async Task<IActionResult> Details(long? id)
+        [HttpGet]
+        public IActionResult InfoDetailCatalog(int id)
         {
-            if (id == null || _context.DetailCatalogs == null)
-            {
-                return NotFound();
-            }
 
-            var detailCatalog = await _context.DetailCatalogs
-                .FirstOrDefaultAsync(m => m.Id == id);
-            if (detailCatalog == null)
-            {
-                return NotFound();
-            }
-
+            var detailCatalog =  workContext.DetailCatalogs.Include(u => u.Details).ThenInclude(j => j.Technic)
+                .FirstOrDefault(m => m.Id == id);
+            
             return View(detailCatalog);
         }
 
         // GET: DetailCatalog/Create
-        public IActionResult Create()
+        [HttpGet]
+        public IActionResult CreateDetailCatalog()
         {
             return View();
         }
 
         // POST: DetailCatalog/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,DateCreate")] DetailCatalog detailCatalog)
+        public IActionResult CreateDetailCatalog(DetailCatalog dc)
         {
-            if (ModelState.IsValid)
-            {
-                _context.Add(detailCatalog);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
-            }
-            return View(detailCatalog);
+            workContext.DetailCatalogs.Add(dc);
+            workContext.SaveChanges();
+            return Redirect("/DetailCatalog/GetDetailCatalogs");
         }
+        
 
         // GET: DetailCatalog/Edit/5
         public async Task<IActionResult> Edit(long? id)
         {
-            if (id == null || _context.DetailCatalogs == null)
+            if (id == null || workContext.DetailCatalogs == null)
             {
                 return NotFound();
             }
 
-            var detailCatalog = await _context.DetailCatalogs.FindAsync(id);
+            var detailCatalog = await workContext.DetailCatalogs.FindAsync(id);
             if (detailCatalog == null)
             {
                 return NotFound();
@@ -81,49 +69,23 @@ namespace CourseWorkFactoryAutomatization.Controllers
         }
 
         // POST: DetailCatalog/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(long id, [Bind("Id,DateCreate")] DetailCatalog detailCatalog)
+        public IActionResult EditDetailCatalog(DetailCatalog dc)
         {
-            if (id != detailCatalog.Id)
-            {
-                return NotFound();
-            }
-
-            if (ModelState.IsValid)
-            {
-                try
-                {
-                    _context.Update(detailCatalog);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!DetailCatalogExists(detailCatalog.Id))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
-                return RedirectToAction(nameof(Index));
-            }
-            return View(detailCatalog);
+            workContext.Entry(dc).State = EntityState.Modified;
+            workContext.SaveChanges();
+            return Redirect("/Technic/GetTechnics");
         }
+                
 
         // GET: DetailCatalog/Delete/5
         public async Task<IActionResult> Delete(long? id)
         {
-            if (id == null || _context.DetailCatalogs == null)
+            if (id == null || workContext.DetailCatalogs == null)
             {
                 return NotFound();
             }
 
-            var detailCatalog = await _context.DetailCatalogs
+            var detailCatalog = await workContext.DetailCatalogs
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (detailCatalog == null)
             {
@@ -138,23 +100,23 @@ namespace CourseWorkFactoryAutomatization.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(long id)
         {
-            if (_context.DetailCatalogs == null)
+            if (workContext.DetailCatalogs == null)
             {
                 return Problem("Entity set 'CourseWorkContext.DetailCatalogs'  is null.");
             }
-            var detailCatalog = await _context.DetailCatalogs.FindAsync(id);
+            var detailCatalog = await workContext.DetailCatalogs.FindAsync(id);
             if (detailCatalog != null)
             {
-                _context.DetailCatalogs.Remove(detailCatalog);
+                workContext.DetailCatalogs.Remove(detailCatalog);
             }
             
-            await _context.SaveChangesAsync();
+            await workContext.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool DetailCatalogExists(long id)
         {
-          return _context.DetailCatalogs.Any(e => e.Id == id);
+          return workContext.DetailCatalogs.Any(e => e.Id == id);
         }
     }
 }

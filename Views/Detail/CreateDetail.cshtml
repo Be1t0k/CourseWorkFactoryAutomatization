@@ -28,6 +28,11 @@
                 </select>
             </div>
             <div class="form-group">
+                <label asp-for="DetailCatalogId" class="control-label"></label>
+                <select asp-for="DetailCatalogId" class="form-control" asp-items="ViewBag.DetailCatalogs">
+                </select>
+            </div>
+            <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>
         </form>

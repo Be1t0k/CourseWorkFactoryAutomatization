@@ -29,7 +29,7 @@ namespace CourseWorkFactoryAutomatization.Controllers
         {
             workContext.Technics.Add(t);
             workContext.SaveChanges();
-            return Redirect("/");
+            return Redirect("/Technic/GetTechnics");
         }
         //GetTech-Get
         public IActionResult GetTechnics()
@@ -57,7 +57,7 @@ namespace CourseWorkFactoryAutomatization.Controllers
                 context.Entry(t).State = EntityState.Modified;
                 context.SaveChanges();
             }
-            return Redirect("/GetTechnics");
+            return Redirect("/Technic/GetTechnics");
         }
         //Edit-Get
         [HttpGet]
@@ -75,7 +75,7 @@ namespace CourseWorkFactoryAutomatization.Controllers
             technic = workContext.Technics.Where(d => d.Id == id).First();
             workContext.Technics.Remove(technic);
             workContext.SaveChanges();
-            return Redirect("/");
+            return Redirect("/Technic/GetTechnics");
         }
     }
 }

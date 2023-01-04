@@ -25,21 +25,25 @@ namespace CourseWorkFactoryAutomatization.Controllers
         {
             IEnumerable<Technic> technics = workContext.Technics.ToList();
             ViewBag.Technics = new SelectList(technics, "Id", "Title");
+            IEnumerable<DetailCatalog> detailCatalogs = workContext.DetailCatalogs.ToList();
+            ViewBag.DetailCatalogs = new SelectList(detailCatalogs, "Id", "DateCreate");
             return View();
         }
         [HttpPost]
-        public IActionResult CreateDetail(Detail d)
+        public IActionResult CreateDetail(Detail d, DetailCatalog dc)
         {
             workContext.Details.Add(d);
+            workContext.DetailCatalogs.Add(dc);
             workContext.SaveChanges();
-            return Redirect("/Detail");
+            return Redirect("/Detail/GetDetails");
         }
 
         public IActionResult GetDetails()
         {
             using (var context = workContext) 
             {
-                return View(context.Details.Include(u => u.Technic).ToList());
+                return View(context.Details.Include(j => j.Technic)
+                       .Include(u => u.DetailCatalog).ToList());
             }
         }
         public IActionResult EditDetail(Detail d)
@@ -49,7 +53,7 @@ namespace CourseWorkFactoryAutomatization.Controllers
                 context.Entry(d).State = EntityState.Modified;
                 context.SaveChanges();
             }
-            return Redirect("/GetDetails");
+            return Redirect("/Detail/GetDetails");
         }
         [HttpGet]
         public IActionResult EditDetail(int id)
@@ -75,7 +79,7 @@ namespace CourseWorkFactoryAutomatization.Controllers
             detail = workContext.Details.Where(d => d.Id == id).First();
             workContext.Details.Remove(detail);
             workContext.SaveChanges();
-            return Redirect("/");
+            return Redirect("/Detail/GetDetails");
         }
     }
 }

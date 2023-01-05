@@ -60,13 +60,17 @@ namespace CourseWorkFactoryAutomatization.Controllers
         {
                 IEnumerable<Technic> technics = workContext.Technics.ToList();
                 ViewBag.Technics = new SelectList(technics, "Id", "Title");
-                return View(workContext.Details.Where(x => x.Id == id).FirstOrDefault());
+            IEnumerable<DetailCatalog> detailCatalogs = workContext.DetailCatalogs.ToList();
+            ViewBag.DetailCatalogs = new SelectList(detailCatalogs, "Id", "Title");
+            return View(workContext.Details.Where(x => x.Id == id).FirstOrDefault());
            
         }
         [HttpGet]
         public IActionResult InfoDetails(int id)
         {
-                return View(workContext.Details.Where(x => x.Id == id).FirstOrDefault());
+            IEnumerable<Technic> technics = workContext.Technics.ToList();
+            ViewBag.Technics = new SelectList(technics, "Id", "Title");
+            return View(workContext.Details.Where(x => x.Id == id).FirstOrDefault());
             
         }
 

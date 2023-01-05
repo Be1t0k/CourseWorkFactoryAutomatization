@@ -22,3 +22,41 @@
     <a asp-action="EditTechnic" asp-route-id="@Model?.Id">Edit</a> |
     <a asp-action="GetTechnics">Back to List</a>
 </div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Title
+            </th>
+            <th>
+                Cost
+            </th>
+            <th>
+                TechnicId
+            </th>
+            <th>
+                Technic
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Details)
+        {
+            <tr>
+                <td>
+                    @item.Title
+                </td>
+                <td>
+                    @item.Cost
+                </td>
+                <td>
+                    @item.Technic.Id
+                </td>
+                <td>
+                    @item.Technic.Title
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

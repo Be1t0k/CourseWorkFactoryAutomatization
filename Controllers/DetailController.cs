@@ -30,10 +30,9 @@ namespace CourseWorkFactoryAutomatization.Controllers
             return View();
         }
         [HttpPost]
-        public IActionResult CreateDetail(Detail d, DetailCatalog dc)
+        public IActionResult CreateDetail(Detail d)
         {
             workContext.Details.Add(d);
-            workContext.DetailCatalogs.Add(dc);
             workContext.SaveChanges();
             return Redirect("/Detail/GetDetails");
         }
@@ -50,31 +49,25 @@ namespace CourseWorkFactoryAutomatization.Controllers
         }
         public IActionResult EditDetail(Detail d)
         {
-            using (var context = workContext)
-            {
-                context.Entry(d).State = EntityState.Modified;
-                context.SaveChanges();
-            }
+
+                workContext.Entry(d).State = EntityState.Modified;
+            workContext.SaveChanges();
+            
             return Redirect("/Detail/GetDetails");
         }
         [HttpGet]
         public IActionResult EditDetail(int id)
         {
-            
-            using (var context = workContext)
-            {
-                IEnumerable<Technic> technics = context.Technics.ToList();
+                IEnumerable<Technic> technics = workContext.Technics.ToList();
                 ViewBag.Technics = new SelectList(technics, "Id", "Title");
-                return View(context.Details.Where(x => x.Id == id).FirstOrDefault());
-            }
+                return View(workContext.Details.Where(x => x.Id == id).FirstOrDefault());
+           
         }
         [HttpGet]
         public IActionResult InfoDetails(int id)
         {
-            using (var context = workContext)
-            {
-                return View(context.Details.Where(x => x.Id == id).FirstOrDefault());
-            }
+                return View(workContext.Details.Where(x => x.Id == id).FirstOrDefault());
+            
         }
 
         public IActionResult DeleteDetail(int id, Detail detail) {

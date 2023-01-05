@@ -34,39 +34,36 @@ namespace CourseWorkFactoryAutomatization.Controllers
         //GetTech-Get
         public IActionResult GetTechnics()
         {
-            using (var context = workContext)
-            {
-                return View(context.Technics.ToList());
-            }
+
+                return View(workContext.Technics.ToList());
+            
         }
         //Info-Get
         [HttpGet]
         public IActionResult InfoTechnics(int id)
         {
-
-            using (var context = workContext)
-            {
-                return View(context.Technics.Where(x => x.Id == id).FirstOrDefault());
-            }
+            var technic = workContext.Technics.Include(u => u.Details)
+            .FirstOrDefault(m => m.Id == id);
+            return View(technic);
+                //return View(workContext.Technics.Where(x => x.Id == id).FirstOrDefault());
+            
         }
         //Edit-Post
         public IActionResult EditTechnic(Technic t)
         {
-            using (var context = workContext)
-            {
-                context.Entry(t).State = EntityState.Modified;
-                context.SaveChanges();
-            }
+
+                workContext.Entry(t).State = EntityState.Modified;
+                workContext.SaveChanges();
+            
             return Redirect("/Technic/GetTechnics");
         }
         //Edit-Get
         [HttpGet]
         public IActionResult EditTechnic(int id)
         {
-            using (var context = workContext)
-            {
-                return View(context.Technics.Where(x => x.Id == id).FirstOrDefault());
-            }
+
+                return View(workContext.Technics.Where(x => x.Id == id).FirstOrDefault());
+            
         }
 
         //Delete-Post

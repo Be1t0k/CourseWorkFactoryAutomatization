@@ -16,20 +16,20 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = D:\vlsu_works\CourseWorkFactoryAutomatization
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/vlsu_works/CourseWorkFactoryAutomatization/Views/DetailCatalog/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGV0YWlsQ2F0YWxvZ1xDcmVhdGUuY3NodG1s
+[D:/vlsu_works/CourseWorkFactoryAutomatization/Views/DetailCatalog/CreateDetailCatalog.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGV0YWlsQ2F0YWxvZ1xDcmVhdGVEZXRhaWxDYXRhbG9nLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/vlsu_works/CourseWorkFactoryAutomatization/Views/DetailCatalog/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGV0YWlsQ2F0YWxvZ1xEZWxldGUuY3NodG1s
+[D:/vlsu_works/CourseWorkFactoryAutomatization/Views/DetailCatalog/DeleteDetailCatalog.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGV0YWlsQ2F0YWxvZ1xEZWxldGVEZXRhaWxDYXRhbG9nLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/vlsu_works/CourseWorkFactoryAutomatization/Views/DetailCatalog/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGV0YWlsQ2F0YWxvZ1xFZGl0LmNzaHRtbA==
+[D:/vlsu_works/CourseWorkFactoryAutomatization/Views/DetailCatalog/EditDetailCatalog.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGV0YWlsQ2F0YWxvZ1xFZGl0RGV0YWlsQ2F0YWxvZy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/vlsu_works/CourseWorkFactoryAutomatization/Views/DetailCatalog/GetDetailCatalog.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGV0YWlsQ2F0YWxvZ1xHZXREZXRhaWxDYXRhbG9nLmNzaHRtbA==
+[D:/vlsu_works/CourseWorkFactoryAutomatization/Views/DetailCatalog/GetDetailCatalogs.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGV0YWlsQ2F0YWxvZ1xHZXREZXRhaWxDYXRhbG9ncy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/vlsu_works/CourseWorkFactoryAutomatization/Views/DetailCatalog/InfoDetailCatalog.cshtml]

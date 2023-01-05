@@ -19,7 +19,7 @@ namespace CourseWorkFactoryAutomatization.Controllers
         }
 
         // GET: DetailCatalog
-        public IActionResult GetDetailCatalog()
+        public IActionResult GetDetailCatalogs()
         {
               return View(workContext.DetailCatalogs.ToList());
         }
@@ -50,73 +50,29 @@ namespace CourseWorkFactoryAutomatization.Controllers
             workContext.SaveChanges();
             return Redirect("/DetailCatalog/GetDetailCatalogs");
         }
-        
-
-        // GET: DetailCatalog/Edit/5
-        public async Task<IActionResult> Edit(long? id)
-        {
-            if (id == null || workContext.DetailCatalogs == null)
-            {
-                return NotFound();
-            }
-
-            var detailCatalog = await workContext.DetailCatalogs.FindAsync(id);
-            if (detailCatalog == null)
-            {
-                return NotFound();
-            }
-            return View(detailCatalog);
-        }
 
         // POST: DetailCatalog/Edit/5
         public IActionResult EditDetailCatalog(DetailCatalog dc)
         {
             workContext.Entry(dc).State = EntityState.Modified;
             workContext.SaveChanges();
-            return Redirect("/Technic/GetTechnics");
+            return Redirect("/DetailCatalog/GetDetailCatalogs");
         }
-                
+
+        [HttpGet]
+        public IActionResult EditDetailCatalog(int id)
+        {
+            return View(workContext.DetailCatalogs.Where(x => x.Id == id).FirstOrDefault());
+        }
 
         // GET: DetailCatalog/Delete/5
-        public async Task<IActionResult> Delete(long? id)
+        public IActionResult DeleteDetailCatalog(int id, DetailCatalog detailCatalog)
         {
-            if (id == null || workContext.DetailCatalogs == null)
-            {
-                return NotFound();
-            }
-
-            var detailCatalog = await workContext.DetailCatalogs
-                .FirstOrDefaultAsync(m => m.Id == id);
-            if (detailCatalog == null)
-            {
-                return NotFound();
-            }
-
-            return View(detailCatalog);
+            detailCatalog = workContext.DetailCatalogs.Where(d => d.Id == id).First();
+            workContext.DetailCatalogs.Remove(detailCatalog);
+            workContext.SaveChanges();
+            return Redirect("/DetailCatalog/GetDetailCatalogs");
         }
 
-        // POST: DetailCatalog/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(long id)
-        {
-            if (workContext.DetailCatalogs == null)
-            {
-                return Problem("Entity set 'CourseWorkContext.DetailCatalogs'  is null.");
-            }
-            var detailCatalog = await workContext.DetailCatalogs.FindAsync(id);
-            if (detailCatalog != null)
-            {
-                workContext.DetailCatalogs.Remove(detailCatalog);
-            }
-            
-            await workContext.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
-        }
-
-        private bool DetailCatalogExists(long id)
-        {
-          return workContext.DetailCatalogs.Any(e => e.Id == id);
-        }
     }
 }

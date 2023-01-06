@@ -4,10 +4,10 @@
     ViewData["Title"] = "InfoDetails";
 }
 
-<h1>InfoDetails</h1>
+<h1>Детальная информация</h1>
 
 <div>
-    <h4>Detail</h4>
+    <h4>Деталь</h4>
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
@@ -37,38 +37,6 @@
     </dl>
 </div>
 <div>
-    <a asp-action="EditDetail" asp-route-id="@Model?.Id">Edit</a> |
-    <a asp-action="GetDetails">Back to List</a>
+    <a asp-action="EditDetail" asp-route-id="@Model?.Id">Отредактировать данные</a> |
+    <a asp-action="GetDetails">Назад к списку</a>
 </div>
-
-@*<table class="table">
-    <thead>
-        <tr>
-            <th>
-                Деталь
-            </th>
-            <th>
-                Расход на технику
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model.GroupBy(p => p.Title).Select(g => new { Title = g.Key, Cost = g.Key, Count = g.Count() }))
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Key)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Data)
-                </td>
-                <td>
-                    <a asp-action="EditDetailCatalog" asp-route-id="@item.Id">Edit</a> |
-                    <a asp-action="InfoDetailCatalog" asp-route-id="@item.Id">Info</a> |
-                    <a asp-action="DeleteDetailCatalog" asp-route-id="@item.Id">Delete</a>
-                </td>
-            </tr>
-        }
-    </tbody>
-</table>*@

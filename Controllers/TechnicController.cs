@@ -74,5 +74,13 @@ namespace CourseWorkFactoryAutomatization.Controllers
             workContext.SaveChanges();
             return Redirect("/Technic/GetTechnics");
         }
+
+        [HttpGet]
+        public IActionResult TechExpenses()
+        {
+            //select t."Title", count(d."Id") from "Technics" as t left join "Details" as d on "TechnicId" = t."Id" group by t."Title";
+            var technic = workContext.Technics.Where(u =>u.Details == null).FirstOrDefault();
+            return View(technic);
+        }
     }
 }

@@ -2,12 +2,16 @@
 
 @{
     ViewData["Title"] = "GetDetails";
+    Layout = "_Layout_Accountant";
 }
 
-<h1>GetDetails</h1>
+<h1>Общий список деталей</h1>
 
 <p>
-    <a asp-action="CreateDetail">Create New</a>
+    <a asp-action="CreateDetail">Ввести деталь в эксплуатацию</a>
+</p>
+<p>
+    <a asp-action="InfoExpenses">Получить информацию о расходах</a>
 </p>
 <table class="table">
     <thead>

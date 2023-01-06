@@ -72,7 +72,6 @@ namespace CourseWorkFactoryAutomatization.Controllers
             IEnumerable<DetailCatalog> detailCatalogs = workContext.DetailCatalogs.ToList();
             ViewBag.DetailCatalogs = new SelectList(detailCatalogs, "Id", "DateCreate");
             return View(workContext.Details.Where(x => x.Id == id).FirstOrDefault());
-            
         }
 
         public IActionResult DeleteDetail(int id, Detail detail) {
@@ -88,7 +87,6 @@ namespace CourseWorkFactoryAutomatization.Controllers
         {
             ViewBag.Groupps = workContext.Details.GroupBy(p => p.Title)
                   .Select(g => new { Title = g.Key, Countt = g.Count() }).ToList();
-
             return View();
         }
     }

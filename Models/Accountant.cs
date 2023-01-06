@@ -2,7 +2,7 @@
 {
     public class Accountant : User
     {
-        public virtual ICollection<DetailCatalog> DetailCatalogs { get; set; }
+        public virtual ICollection<DetailCatalog>? DetailCatalogs { get; set; }
 
     }
 }

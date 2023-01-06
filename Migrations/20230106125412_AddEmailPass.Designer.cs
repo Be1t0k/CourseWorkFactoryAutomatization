@@ -3,6 +3,7 @@ using System;
 using CourseWorkFactoryAutomatization.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace CourseWorkFactoryAutomatization.Migrations
 {
     [DbContext(typeof(CourseWorkContext))]
-    partial class CourseWorkContextModelSnapshot : ModelSnapshot
+    [Migration("20230106125412_AddEmailPass")]
+    partial class AddEmailPass
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -35,6 +38,72 @@ namespace CourseWorkFactoryAutomatization.Migrations
                     b.HasIndex("DetailCatalogsId");
 
                     b.ToTable("AccountantDetailCatalog");
+                });
+
+            modelBuilder.Entity("CourseWorkFactoryAutomatization.Models.Accountant", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<long>("Id"));
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Surname")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Accountants");
+                });
+
+            modelBuilder.Entity("CourseWorkFactoryAutomatization.Models.Admin", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<long>("Id"));
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<long>("IdCatalog")
+                        .HasColumnType("bigint");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Surname")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<int>("UserCatalogId")
+                        .HasColumnType("integer");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserCatalogId");
+
+                    b.ToTable("Admins");
                 });
 
             modelBuilder.Entity("CourseWorkFactoryAutomatization.Models.Detail", b =>
@@ -83,6 +152,35 @@ namespace CourseWorkFactoryAutomatization.Migrations
                     b.ToTable("DetailCatalogs");
                 });
 
+            modelBuilder.Entity("CourseWorkFactoryAutomatization.Models.SuperVisor", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<long>("Id"));
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Surname")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("SuperVisors");
+                });
+
             modelBuilder.Entity("CourseWorkFactoryAutomatization.Models.Technic", b =>
                 {
                     b.Property<long>("Id")
@@ -121,43 +219,6 @@ namespace CourseWorkFactoryAutomatization.Migrations
                     b.ToTable("TechnicManuals");
                 });
 
-            modelBuilder.Entity("CourseWorkFactoryAutomatization.Models.User", b =>
-                {
-                    b.Property<long>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<long>("Id"));
-
-                    b.Property<string>("Discriminator")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("Email")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("Password")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("Surname")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Users");
-
-                    b.HasDiscriminator<string>("Discriminator").HasValue("User");
-
-                    b.UseTphMappingStrategy();
-                });
-
             modelBuilder.Entity("CourseWorkFactoryAutomatization.Models.UserCatalog", b =>
                 {
                     b.Property<int>("Id")
@@ -186,35 +247,6 @@ namespace CourseWorkFactoryAutomatization.Migrations
                     b.ToTable("SuperVisorTechnicManual");
                 });
 
-            modelBuilder.Entity("CourseWorkFactoryAutomatization.Models.Accountant", b =>
-                {
-                    b.HasBaseType("CourseWorkFactoryAutomatization.Models.User");
-
-                    b.HasDiscriminator().HasValue("Accountant");
-                });
-
-            modelBuilder.Entity("CourseWorkFactoryAutomatization.Models.Admin", b =>
-                {
-                    b.HasBaseType("CourseWorkFactoryAutomatization.Models.User");
-
-                    b.Property<long>("IdCatalog")
-                        .HasColumnType("bigint");
-
-                    b.Property<int>("UserCatalogId")
-                        .HasColumnType("integer");
-
-                    b.HasIndex("UserCatalogId");
-
-                    b.HasDiscriminator().HasValue("Admin");
-                });
-
-            modelBuilder.Entity("CourseWorkFactoryAutomatization.Models.SuperVisor", b =>
-                {
-                    b.HasBaseType("CourseWorkFactoryAutomatization.Models.User");
-
-                    b.HasDiscriminator().HasValue("SuperVisor");
-                });
-
             modelBuilder.Entity("AccountantDetailCatalog", b =>
                 {
                     b.HasOne("CourseWorkFactoryAutomatization.Models.Accountant", null)
@@ -228,6 +260,17 @@ namespace CourseWorkFactoryAutomatization.Migrations
                         .HasForeignKey("DetailCatalogsId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("CourseWorkFactoryAutomatization.Models.Admin", b =>
+                {
+                    b.HasOne("CourseWorkFactoryAutomatization.Models.UserCatalog", "UserCatalog")
+                        .WithMany("Admins")
+                        .HasForeignKey("UserCatalogId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("UserCatalog");
                 });
 
             modelBuilder.Entity("CourseWorkFactoryAutomatization.Models.Detail", b =>
@@ -269,17 +312,6 @@ namespace CourseWorkFactoryAutomatization.Migrations
                         .HasForeignKey("TechnicManualsId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-                });
-
-            modelBuilder.Entity("CourseWorkFactoryAutomatization.Models.Admin", b =>
-                {
-                    b.HasOne("CourseWorkFactoryAutomatization.Models.UserCatalog", "UserCatalog")
-                        .WithMany("Admins")
-                        .HasForeignKey("UserCatalogId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("UserCatalog");
                 });
 
             modelBuilder.Entity("CourseWorkFactoryAutomatization.Models.DetailCatalog", b =>

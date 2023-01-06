@@ -16,6 +16,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = D:\vlsu_works\CourseWorkFactoryAutomatization
 build_property._RazorSourceGeneratorDebug = 
 
+[D:/vlsu_works/CourseWorkFactoryAutomatization/Views/Account/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/vlsu_works/CourseWorkFactoryAutomatization/Views/DetailCatalog/CreateDetailCatalog.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGV0YWlsQ2F0YWxvZ1xDcmVhdGVEZXRhaWxDYXRhbG9nLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -92,6 +96,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVjaG5pY1xJbmZvVGVjaG5pY3MuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/vlsu_works/CourseWorkFactoryAutomatization/Views/Technic/TechExpenses.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVjaG5pY1xUZWNoRXhwZW5zZXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/vlsu_works/CourseWorkFactoryAutomatization/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -103,3 +111,15 @@ build_metadata.AdditionalFiles.CssScope =
 [D:/vlsu_works/CourseWorkFactoryAutomatization/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-h18r90bri4
+
+[D:/vlsu_works/CourseWorkFactoryAutomatization/Views/Shared/_Layout_Accountant.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRfQWNjb3VudGFudC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = b-k1ncrvotb3
+
+[D:/vlsu_works/CourseWorkFactoryAutomatization/Views/Shared/_Layout_Admin.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRfQWRtaW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-g4j24a2fiw
+
+[D:/vlsu_works/CourseWorkFactoryAutomatization/Views/Shared/_Layout_SuperVisor.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRfU3VwZXJWaXNvci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = b-271q7ognaq

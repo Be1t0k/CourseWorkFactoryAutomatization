@@ -3,6 +3,6 @@
     public class Admin: User
     {
         public long IdCatalog { get; set; }
-        public virtual UserCatalog UserCatalog { get; set; }
+        public virtual UserCatalog? UserCatalog { get; set; }
     }
 }

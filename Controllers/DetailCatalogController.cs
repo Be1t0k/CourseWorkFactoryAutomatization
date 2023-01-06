@@ -29,9 +29,11 @@ namespace CourseWorkFactoryAutomatization.Controllers
         public IActionResult InfoDetailCatalog(int id)
         {
 
-            var detailCatalog =  workContext.DetailCatalogs.Include(u => u.Details).ThenInclude(j => j.Technic)
+            var detailCatalog =  workContext.DetailCatalogs
+                .Include(u => u.Details)
+                .ThenInclude(j => j.Technic)
                 .FirstOrDefault(m => m.Id == id);
-            
+
             return View(detailCatalog);
         }
 

@@ -1,0 +1,32 @@
+﻿@{
+    ViewData["Title"] = "InfoExpenses";
+}
+
+<h1>Информация по расходу</h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Наименование детали
+            </th>
+            <th>
+                Расход в технике
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var gr in ViewBag.Groupps)
+        {
+            <tr>
+                <td>
+                    @gr.Title
+                </td>
+                <td>
+                    @gr.Countt
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

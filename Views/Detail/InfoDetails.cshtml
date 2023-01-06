@@ -28,9 +28,47 @@
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Technic.Id)
         </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.DetailCatalog)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DetailCatalog.DateCreate)
+        </dd>
     </dl>
 </div>
 <div>
     <a asp-action="EditDetail" asp-route-id="@Model?.Id">Edit</a> |
     <a asp-action="GetDetails">Back to List</a>
 </div>
+
+@*<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Деталь
+            </th>
+            <th>
+                Расход на технику
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.GroupBy(p => p.Title).Select(g => new { Title = g.Key, Cost = g.Key, Count = g.Count() }))
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Key)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Data)
+                </td>
+                <td>
+                    <a asp-action="EditDetailCatalog" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="InfoDetailCatalog" asp-route-id="@item.Id">Info</a> |
+                    <a asp-action="DeleteDetailCatalog" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>*@

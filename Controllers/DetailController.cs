@@ -50,18 +50,17 @@ namespace CourseWorkFactoryAutomatization.Controllers
         public IActionResult EditDetail(Detail d)
         {
 
-                workContext.Entry(d).State = EntityState.Modified;
+            workContext.Entry(d).State = EntityState.Modified;
             workContext.SaveChanges();
-            
             return Redirect("/Detail/GetDetails");
         }
         [HttpGet]
         public IActionResult EditDetail(int id)
         {
-                IEnumerable<Technic> technics = workContext.Technics.ToList();
-                ViewBag.Technics = new SelectList(technics, "Id", "Title");
+            IEnumerable<Technic> technics = workContext.Technics.ToList();
+            ViewBag.Technics = new SelectList(technics, "Id", "Title");
             IEnumerable<DetailCatalog> detailCatalogs = workContext.DetailCatalogs.ToList();
-            ViewBag.DetailCatalogs = new SelectList(detailCatalogs, "Id", "Title");
+            ViewBag.DetailCatalogs = new SelectList(detailCatalogs, "Id", "DateCreate");
             return View(workContext.Details.Where(x => x.Id == id).FirstOrDefault());
            
         }
@@ -70,6 +69,8 @@ namespace CourseWorkFactoryAutomatization.Controllers
         {
             IEnumerable<Technic> technics = workContext.Technics.ToList();
             ViewBag.Technics = new SelectList(technics, "Id", "Title");
+            IEnumerable<DetailCatalog> detailCatalogs = workContext.DetailCatalogs.ToList();
+            ViewBag.DetailCatalogs = new SelectList(detailCatalogs, "Id", "DateCreate");
             return View(workContext.Details.Where(x => x.Id == id).FirstOrDefault());
             
         }
@@ -79,6 +80,16 @@ namespace CourseWorkFactoryAutomatization.Controllers
             workContext.Details.Remove(detail);
             workContext.SaveChanges();
             return Redirect("/Detail/GetDetails");
+        }
+
+
+        [HttpGet]
+        public IActionResult InfoExpenses()
+        {
+            ViewBag.Groupps = workContext.Details.GroupBy(p => p.Title)
+                  .Select(g => new { Title = g.Key, Countt = g.Count() }).ToList();
+
+            return View();
         }
     }
 }

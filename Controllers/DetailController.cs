@@ -39,13 +39,10 @@ namespace CourseWorkFactoryAutomatization.Controllers
 
         public IActionResult GetDetails()
         {
-            using (var context = workContext) 
-            {
-                return View(context.Details
+                return View(workContext.Details
                     .Include(j => j.Technic)
                     .Include(u => u.DetailCatalog)
                     .ToList());
-            }
         }
         public IActionResult EditDetail(Detail d)
         {

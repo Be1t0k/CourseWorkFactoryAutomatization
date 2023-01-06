@@ -18,6 +18,11 @@
                 <span asp-validation-for="Title" class="text-danger"></span>
             </div>
             <div class="form-group">
+                <label asp-for="TechnicManualId" class="control-label"></label>
+                <select asp-for="TechnicManualId" class="form-control" asp-items="ViewBag.TechnicManuals">
+                </select>
+            </div>
+            <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>
         </form>
@@ -25,7 +30,7 @@
 </div>
 
 <div>
-    <a asp-action="GetDetails">Back to List</a>
+    <a asp-action="GetTechnics">Back to List</a>
 </div>
 
 @section Scripts {

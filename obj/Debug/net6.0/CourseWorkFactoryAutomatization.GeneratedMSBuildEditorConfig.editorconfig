@@ -80,6 +80,26 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/vlsu_works/CourseWorkFactoryAutomatization/Views/TechnicManual/CreateTechnicManual.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVjaG5pY01hbnVhbFxDcmVhdGVUZWNobmljTWFudWFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/vlsu_works/CourseWorkFactoryAutomatization/Views/TechnicManual/DeleteTechnicManual.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVjaG5pY01hbnVhbFxEZWxldGVUZWNobmljTWFudWFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/vlsu_works/CourseWorkFactoryAutomatization/Views/TechnicManual/EditTechnicCatalog.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVjaG5pY01hbnVhbFxFZGl0VGVjaG5pY0NhdGFsb2cuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/vlsu_works/CourseWorkFactoryAutomatization/Views/TechnicManual/GetTechnicManuals.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVjaG5pY01hbnVhbFxHZXRUZWNobmljTWFudWFscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/vlsu_works/CourseWorkFactoryAutomatization/Views/TechnicManual/InfoTechnicManual.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVjaG5pY01hbnVhbFxJbmZvVGVjaG5pY01hbnVhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/vlsu_works/CourseWorkFactoryAutomatization/Views/Technic/CreateTechnic.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVjaG5pY1xDcmVhdGVUZWNobmljLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 

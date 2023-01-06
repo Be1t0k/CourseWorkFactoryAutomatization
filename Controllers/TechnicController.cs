@@ -21,6 +21,8 @@ namespace CourseWorkFactoryAutomatization.Controllers
         [HttpGet]
         public IActionResult CreateTechnic()
         {
+            IEnumerable<TechnicManual> technicManuals = workContext.TechnicManuals.ToList();
+            ViewBag.TechnicManuals = new SelectList(technicManuals, "Id", "DateCreate");
             return View();
         }
         //Create-Post
@@ -28,6 +30,7 @@ namespace CourseWorkFactoryAutomatization.Controllers
         public IActionResult CreateTechnic(Technic t)
         {
             workContext.Technics.Add(t);
+            
             workContext.SaveChanges();
             return Redirect("/Technic/GetTechnics");
         }
@@ -35,7 +38,7 @@ namespace CourseWorkFactoryAutomatization.Controllers
         public IActionResult GetTechnics()
         {
 
-                return View(workContext.Technics.ToList());
+                return View(workContext.Technics.Include(u => u.TechnicManual).ToList());
             
         }
         //Info-Get
@@ -46,7 +49,6 @@ namespace CourseWorkFactoryAutomatization.Controllers
             .FirstOrDefault(m => m.Id == id);
             return View(technic);
                 //return View(workContext.Technics.Where(x => x.Id == id).FirstOrDefault());
-            
         }
         //Edit-Post
         public IActionResult EditTechnic(Technic t)
@@ -61,8 +63,9 @@ namespace CourseWorkFactoryAutomatization.Controllers
         [HttpGet]
         public IActionResult EditTechnic(int id)
         {
-
-                return View(workContext.Technics.Where(x => x.Id == id).FirstOrDefault());
+            IEnumerable<TechnicManual> technicManuals = workContext.TechnicManuals.ToList();
+            ViewBag.TechnicManuals = new SelectList(technicManuals, "Id", "DateCreate");
+            return View(workContext.Technics.Where(x => x.Id == id).FirstOrDefault());
             
         }
 

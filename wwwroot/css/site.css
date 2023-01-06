@@ -16,3 +16,8 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+.pos-r {
+    margin-left: 450px;
+    margin-right: 0em;
+}

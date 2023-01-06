@@ -4,10 +4,9 @@
     <form asp-action="Login">
         <h1 class="register">Вход</h1>
         <label asp-for="Email"> E-mail:</label>
-        <input asp-for="Email" class="style-register" type="email" placeholder="Введите e-mail">
+        <input asp-for="Email" class="form-control" type="email" placeholder="Введите e-mail">
         <label asp-for="Password"> Пароль:</label>
-        <input asp-for="Password" class="style-register" type="password" placeholder="Введите пароль">
-        <button class="btn-otpravit">Отправить</button>
-        <a asp-controller="Account" asp-action="Register"> Зарегистрироваться </a>
+        <input asp-for="Password" class="form-control" type="password" placeholder="Введите пароль">
+        <button class="btn btn-primary">Отправить</button>
     </form>
 </div>

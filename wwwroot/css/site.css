@@ -18,6 +18,9 @@ body {
 }
 
 .pos-r {
-    margin-left: 450px;
+    margin-left: 200px;
     margin-right: 0em;
+}
+.container-register{
+    width: 400px;
 }

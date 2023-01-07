@@ -1,5 +1,6 @@
 ﻿using CourseWorkFactoryAutomatization.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 
 namespace CourseWorkFactoryAutomatization.Controllers
@@ -42,6 +43,27 @@ namespace CourseWorkFactoryAutomatization.Controllers
         {
             Response.Cookies.Delete("userId");
             return RedirectToAction("Index", "Home"); //добавить контроллер и метод для главной страницы
+        }
+
+        [HttpGet]
+        public IActionResult CreateUser()
+        {
+            IEnumerable<User> users = workContext.Users.ToList();
+            ViewBag.Users = new SelectList(users, "Id", "Name", "Surname");
+            return View();
+        }
+        //Create-Post
+        [HttpPost]
+        public IActionResult CreateUser(User user)
+        {
+            workContext.Users.Add(user);
+            workContext.SaveChanges();
+            return Redirect("/User/GetUsers");
+        }
+
+        public IActionResult GetUsers()
+        {
+            return View(workContext.Users.ToList());
         }
 
         public IActionResult Index()

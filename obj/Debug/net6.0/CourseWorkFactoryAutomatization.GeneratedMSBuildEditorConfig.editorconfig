@@ -16,6 +16,14 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = D:\vlsu_works\CourseWorkFactoryAutomatization
 build_property._RazorSourceGeneratorDebug = 
 
+[D:/vlsu_works/CourseWorkFactoryAutomatization/Views/Account/CreateUser.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxDcmVhdGVVc2VyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/vlsu_works/CourseWorkFactoryAutomatization/Views/Account/GetUsers.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxHZXRVc2Vycy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/vlsu_works/CourseWorkFactoryAutomatization/Views/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -118,6 +126,14 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/vlsu_works/CourseWorkFactoryAutomatization/Views/Technic/TechExpenses.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVjaG5pY1xUZWNoRXhwZW5zZXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/vlsu_works/CourseWorkFactoryAutomatization/Views/UserCatalog/CreateUserCatalog.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlckNhdGFsb2dcQ3JlYXRlVXNlckNhdGFsb2cuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/vlsu_works/CourseWorkFactoryAutomatization/Views/UserCatalog/GetUserCatalogs.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlckNhdGFsb2dcR2V0VXNlckNhdGFsb2dzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/vlsu_works/CourseWorkFactoryAutomatization/Views/_ViewImports.cshtml]

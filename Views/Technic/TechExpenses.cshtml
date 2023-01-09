@@ -1,24 +1,32 @@
-﻿@model CourseWorkFactoryAutomatization.Models.Technic
-
-@{
-    ViewData["Title"] = "InfoTechnics";
+﻿@{
+    ViewData["Title"] = "InfoExpenses";
+    Layout = "_Layout_Accountant";
 }
 
-<h1>InfoTechnics</h1>
+<h1>Информация по расходу</h1>
 
-<div>
-    <h4>Technic</h4>
-    <hr />
-    <dl class="row">
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Title)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Title)
-        </dd>
-    </dl>
-</div>
-<div>
-    <a asp-action="EditTechnic" asp-route-id="@Model?.Id">Edit</a> |
-    <a asp-action="GetTechnics">Back to List</a>
-</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Наименование техники
+            </th>
+            <th>
+                Расход деталей
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var gr in ViewBag.Counterr)
+        {
+            <tr>
+                <td>
+                    @gr.TechId
+                </td>
+                <td>
+                    @gr.Countt
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

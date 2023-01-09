@@ -71,7 +71,8 @@ namespace CourseWorkFactoryAutomatization.Controllers
             return View(workContext.Details.Where(x => x.Id == id).FirstOrDefault());
         }
 
-        public IActionResult DeleteDetail(int id, Detail detail) {
+        public IActionResult DeleteDetail(int id, Detail detail) 
+        {
             detail = workContext.Details.Where(d => d.Id == id).First();
             workContext.Details.Remove(detail);
             workContext.SaveChanges();

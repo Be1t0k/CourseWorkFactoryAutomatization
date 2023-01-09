@@ -74,6 +74,5 @@ namespace CourseWorkFactoryAutomatization.Controllers
             workContext.SaveChanges();
             return Redirect("/TechnicManual/GetTechnicManuals");
         }
-
     }
 }

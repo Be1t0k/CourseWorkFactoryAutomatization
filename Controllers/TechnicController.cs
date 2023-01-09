@@ -2,6 +2,8 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Internal;
+using System.Linq;
 
 namespace CourseWorkFactoryAutomatization.Controllers
 {
@@ -37,8 +39,7 @@ namespace CourseWorkFactoryAutomatization.Controllers
         //GetTech-Get
         public IActionResult GetTechnics()
         {
-
-                return View(workContext.Technics.Include(u => u.TechnicManual).ToList());
+            return View(workContext.Technics.Include(u => u.TechnicManual).ToList());
             
         }
         //Info-Get
@@ -48,15 +49,13 @@ namespace CourseWorkFactoryAutomatization.Controllers
             var technic = workContext.Technics.Include(u => u.Details)
             .FirstOrDefault(m => m.Id == id);
             return View(technic);
-                //return View(workContext.Technics.Where(x => x.Id == id).FirstOrDefault());
+                //return View(workContext.Technics.Where(det => det.Id == id).FirstOrDefault());
         }
         //Edit-Post
         public IActionResult EditTechnic(Technic t)
         {
-
-                workContext.Entry(t).State = EntityState.Modified;
-                workContext.SaveChanges();
-            
+            workContext.Entry(t).State = EntityState.Modified;
+            workContext.SaveChanges();
             return Redirect("/Technic/GetTechnics");
         }
         //Edit-Get
@@ -81,9 +80,14 @@ namespace CourseWorkFactoryAutomatization.Controllers
         [HttpGet]
         public IActionResult TechExpenses()
         {
-            //select t."Title", count(d."Id") from "Technics" as t left join "Details" as d on "TechnicId" = t."Id" group by t."Title";
-            var technic = workContext.Technics.Where(u =>u.Details == null).FirstOrDefault();
-            return View(technic);
+            ViewBag.Counterr = workContext.Technics
+                    .GroupJoin(workContext.Details, tech => tech.Id, det => det.TechnicId,
+                    (tech, details) => new
+                    {
+                        TechId = tech.Title,
+                        Countt = details.Count(),
+                    });
+            return View();
         }
     }
 }

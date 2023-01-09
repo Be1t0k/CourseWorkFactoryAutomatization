@@ -2,13 +2,11 @@
 
 @{
     ViewData["Title"] = "GetUsers";
+    Layout = "_Layout_Admin";
 }
 
-<h1>GetUsers</h1>
+<h1>Общий список пользователей</h1>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
 <table class="table">
     <thead>
         <tr>
@@ -23,6 +21,9 @@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Password)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Discriminator)
             </th>
             <th></th>
         </tr>
@@ -43,9 +44,12 @@
                 @Html.DisplayFor(modelItem => item.Password)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                @Html.DisplayFor(modelItem => item.Discriminator)
+            </td>
+            <td>
+                <a asp-action="EditUser" asp-route-id="@item.Id">Редактировать</a> |
+                <a asp-action="InfoUser" asp-route-id="@item.Id">Инфо</a> |
+                <a asp-action="DeleteUser" asp-route-id="@item.Id">Удалить</a>
             </td>
         </tr>
 }

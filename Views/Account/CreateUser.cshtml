@@ -1,7 +1,9 @@
 ﻿@model CourseWorkFactoryAutomatization.Models.User
 
 @{
+    ViewBag.Discriminators = new List<String>() { "Accountant", "SuperVisor", "Admin" };
     ViewData["Title"] = "CreateUser";
+    Layout = "_Layout_Admin";
 }
 
 <h1>CreateUser</h1>
@@ -33,6 +35,11 @@
                 <span asp-validation-for="Password" class="text-danger"></span>
             </div>
             <div class="form-group">
+                <label asp-for="Discriminator" class="control-label"></label>
+                <select asp-for="Discriminator" class="form-control" asp-items="ViewBag.Discriminators">
+                </select>
+            </div>
+            <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>
         </form>
@@ -40,7 +47,7 @@
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="GetUsers">Вернуться к списку</a>
 </div>
 
 @section Scripts {

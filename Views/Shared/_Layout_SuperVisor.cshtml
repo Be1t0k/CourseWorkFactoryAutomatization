@@ -18,12 +18,15 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul>
+                    <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Technic" asp-action="GetTechnics">Общий список техники</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="TechnicManual" asp-action="GetTechnicManuals"> Каталоги техники</a>
+                        </li>
                         <li class="nav-item item-3">
-                            <a asp-controller="Account" asp-action="Logout" class="header-top-3"> Выход </a>
+                            <a class="nav-link text-dark"  asp-controller="Account" asp-action="Logout" class="header-top-3"> Выйти </a>
                         </li>
                     </ul>
                 </div>

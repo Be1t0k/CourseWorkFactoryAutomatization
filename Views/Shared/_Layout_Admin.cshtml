@@ -20,20 +20,17 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Detail" asp-action="GetDetails">Общий список деталей</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="GetUsers">Общий список пользователей</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Technic" asp-action="GetTechnics">Общий список техники</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="DetailCatalog" asp-action="GetDetailCatalogs">Каталоги деталей</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="UserCatalog" asp-action="GetUserCatalogs">Каталоги пользователей</a>
                         </li>
                         <li class="nav-item item-3">
-                            <a asp-controller="Account" asp-action="Logout" class="header-top-3"> Выход </a>
+                            <a class="nav-link text-dark pos-r" asp-controller="Account" asp-action="Logout" class="header-top-3">Выйти</a>
                         </li>
-                        @*<div class="nav-item item-3">
-                            <a asp-controller="Account" asp-action="Register" class="header-top-3"> Регистрация пользователей </a>
-                        </div>*@
+                        <div class="nav-item item-3">
+                            <a class="nav-link text-dark pos-r" asp-controller="Account" asp-action="CreateUser" class="header-top-3">Регистрация пользователей</a>
+                        </div>
                     </ul>
                 </div>
             </div>

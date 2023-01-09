@@ -35,7 +35,7 @@ namespace CourseWorkFactoryAutomatization.Controllers
                 long id = workContext.Admins.Where(a => a.Password == user.Password && a.Email == user.Email).Select(a => a.Id).FirstOrDefault();
                 Response.Cookies.Append("userId", id.ToString());
 
-                return RedirectToAction("GetDetails", "Detail", new { id = id });
+                return RedirectToAction("GetUsers", "Account", new { id = id });
             }
             return View();
         }
@@ -56,6 +56,7 @@ namespace CourseWorkFactoryAutomatization.Controllers
         [HttpPost]
         public IActionResult CreateUser(User user)
         {
+            
             workContext.Users.Add(user);
             workContext.SaveChanges();
             return Redirect("/User/GetUsers");

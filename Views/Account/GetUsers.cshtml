@@ -6,7 +6,10 @@
 }
 
 <h1>Общий список пользователей</h1>
-
+<label>
+    <input type="checkbox" class="form-check-input" id="showpasswords">
+    Показать пароли
+</label>
 <table class="table">
     <thead>
         <tr>
@@ -29,29 +32,30 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Surname)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Email)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Password)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Discriminator)
-            </td>
-            <td>
-                <a asp-action="EditUser" asp-route-id="@item.Id">Редактировать</a> |
-                <a asp-action="InfoUser" asp-route-id="@item.Id">Инфо</a> |
-                <a asp-action="DeleteUser" asp-route-id="@item.Id">Удалить</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr class="password">
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Surname)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    <input type="password" class="password" id="password" value="@Html.DisplayFor(modelItem => item.Password)" readonly>
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Discriminator)
+                </td>
+                <td>
+                    <a asp-action="EditUser" asp-route-id="@item.Id">Редактировать</a> |
+                    <a asp-action="InfoUser" asp-route-id="@item.Id">Инфо</a> |
+                    <a asp-action="DeleteUser" asp-route-id="@item.Id">Удалить</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>

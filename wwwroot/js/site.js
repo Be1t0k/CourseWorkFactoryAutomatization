@@ -1,9 +1,4 @@
-﻿// Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
-
-// Write your JavaScript code.
-
-
+﻿
 document.addEventListener('DOMContentLoaded', () => {
 
     const getSort = ({ target }) => {
@@ -24,4 +19,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.querySelectorAll('.table thead').forEach(tableTH => tableTH.addEventListener('click', () => getSort(event)));
 
+});
+
+document.getElementById("showpasswords").addEventListener("click", function () {
+    [...document.querySelectorAll(".password")].forEach(p =>
+        p.type = p.type === "password" ? "text" : "password"
+    )
+})
+document.getElementById("registerdetails").addEventListener("submit", function (e) {
+    const errSpan = document.getElementById("passwordmatcherror");
+    let firstPassword = this.password.value;
+    let retypedPassword = this.retypedpassword.value;
+    errSpan.classList.toggle("error", firstPassword !== retypedPassword);
+
+    if (firstPassword !== retypedPassword) {
+        errSpan.innerHTML = ("Passwords do not match. Please retype");
+        e.preventDefault();
+    }
 });

@@ -15,12 +15,21 @@ html {
 
 body {
   margin-bottom: 60px;
+  background-color: rgb(248, 243, 200)
 }
 
-.pos-r {
-    margin-left: 200px;
-    margin-right: 0em;
-}
 .container-register{
     width: 400px;
+}
+.table {
+    box-shadow:0px 0px 15px 5px rgb(0, 0, 0, 0.27);
+}
+header {
+    box-shadow: 0px 0px 10px 3px rgb(0, 0, 0, 0.27);
+}
+.container-fluid {
+    background-color: rgb(182, 183, 158)
+}
+label{
+    margin-bottom:10px;
 }

@@ -5,11 +5,10 @@
     Layout = "_Layout_SuperVisor";
 }
 
-<h1>DeleteTechnicManual</h1>
+<h1>Удалить каталог</h1>
 
-<h3>Are you sure you want to delete this?</h3>
+<h3>Вы уверены что хотите удалить запись?</h3>
 <div>
-    <h4>TechnicManual</h4>
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
@@ -23,6 +22,6 @@
     <form asp-action="DeleteTechnicManual">
         <input type="hidden" asp-for="Id" />
         <input type="submit" value="Delete" class="btn btn-danger" /> |
-        <a asp-action="Index">Back to List</a>
+        <a asp-action="Index">Назад к общему списку</a>
     </form>
 </div>

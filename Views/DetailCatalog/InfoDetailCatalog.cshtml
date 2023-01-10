@@ -2,12 +2,13 @@
 
 @{
     ViewData["Title"] = "Details";
+    Layout = "_Layout_Accountant";
 }
 
-<h1>Details</h1>
+<h1>Каталог деталей</h1>
 
 <div>
-    <h4>InfoDetailCatalog</h4>
+    <h4>Детальная информация</h4>
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
@@ -19,8 +20,8 @@
     </dl>
 </div>
 <div>
-    <a asp-action="EditDetailCatalog" asp-route-id="@Model?.Id">Edit</a> |
-    <a asp-action="GetDetailCatalogs">Back to List</a>
+    <a asp-action="EditDetailCatalog" asp-route-id="@Model?.Id">Редактировать</a> |
+    <a asp-action="GetDetailCatalogs">Назад к общему списку</a>
 </div>
 
 <table class="table">

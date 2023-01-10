@@ -2,12 +2,13 @@
 
 @{
     ViewData["Title"] = "GetDetailCatalogs";
+    Layout = "_Layout_Accountant";
 }
 
-<h1>GetDetailCatalogs</h1>
+<h1>Общий список каталогов</h1>
 
 <p>
-    <a asp-action="CreateDetailCatalog">Create New</a>
+    <a asp-action="CreateDetailCatalog">Создать новый каталог деталей</a>
 </p>
 <table class="table">
     <thead>
@@ -31,9 +32,9 @@
                 @Html.DisplayFor(modelItem => item.DateCreate)
             </td>
             <td>
-                <a asp-action="EditDetailCatalog" asp-route-id="@item.Id">Edit</a> |
-                    <a asp-action="InfoDetailCatalog" asp-route-id="@item.Id">Info</a> |
-                <a asp-action="DeleteDetailCatalog" asp-route-id="@item.Id">Delete</a>
+                <a asp-action="EditDetailCatalog" asp-route-id="@item.Id">Редактировать</a> |
+                    <a asp-action="InfoDetailCatalog" asp-route-id="@item.Id">Инфо</a> |
+                <a asp-action="DeleteDetailCatalog" asp-route-id="@item.Id">Удалить</a>
             </td>
         </tr>
 }

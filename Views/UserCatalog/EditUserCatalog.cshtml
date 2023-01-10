@@ -1,31 +1,31 @@
-﻿@model CourseWorkFactoryAutomatization.Models.TechnicManual
+﻿@model CourseWorkFactoryAutomatization.Models.UserCatalog
 
 @{
-    ViewData["Title"] = "CreateTechnicManual";
-    Layout = "_Layout_SuperVisor";
+    ViewData["Title"] = "EditUserCatalog";
 }
 
-<h1>Создать новый каталог</h1>
+<h1>Отредактировать данные каталога</h1>
 
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="CreateTechnicManual">
+        <form asp-action="EditUserCatalog">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
             <div class="form-group">
                 <label asp-for="DateCreate" class="control-label"></label>
                 <input asp-for="DateCreate" class="form-control" />
                 <span asp-validation-for="DateCreate" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Сохранить" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index">Назад к общему списку</a>
+    <a asp-action="GetUserCatalog">Назад к общему списку</a>
 </div>
 
 @section Scripts {

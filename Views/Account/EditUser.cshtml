@@ -1,17 +1,17 @@
 ﻿@model CourseWorkFactoryAutomatization.Models.User
 
 @{
-    ViewData["Title"] = "CreateUser";
-    Layout = "_Layout_Admin";
+    ViewData["Title"] = "EditUser";
 }
 
-<h1>Создать пользователя</h1>
+<h1>Отредактировать данные пользователя</h1>
 
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="CreateUser">
+        <form asp-action="EditUser">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
             <div class="form-group">
                 <label asp-for="Name" class="control-label"></label>
                 <input asp-for="Name" class="form-control" />
@@ -34,18 +34,18 @@
             </div>
             <div class="form-group">
                 <label asp-for="Discriminator" class="control-label"></label>
-                <select asp-for="Discriminator" class="form-control" asp-items="ViewBag.Discriminators">
-                </select>
+                <input asp-for="Discriminator" class="form-control" />
+                <span asp-validation-for="Discriminator" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Создать" class="btn btn-primary" />
+                <input type="submit" value="Сохранить" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="GetUsers">Вернуться к списку</a>
+    <a asp-action="GetUsers">Назад к списку пользователей</a>
 </div>
 
 @section Scripts {

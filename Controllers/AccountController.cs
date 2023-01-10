@@ -48,6 +48,8 @@ namespace CourseWorkFactoryAutomatization.Controllers
         [HttpGet]
         public IActionResult CreateUser()
         {
+            var Disc = new List<String>() { "Accountant", "SuperVisor", "Admin" };
+            ViewBag.Discriminators = new SelectList(Disc);
             IEnumerable<User> users = workContext.Users.ToList();
             ViewBag.Users = new SelectList(users, "Id", "Name", "Surname");
             return View();
@@ -56,16 +58,43 @@ namespace CourseWorkFactoryAutomatization.Controllers
         [HttpPost]
         public IActionResult CreateUser(User user)
         {
-            
             workContext.Users.Add(user);
             workContext.SaveChanges();
-            return Redirect("/User/GetUsers");
+            return Redirect("/Account/GetUsers");
         }
 
         public IActionResult GetUsers()
         {
             return View(workContext.Users.ToList());
         }
+
+        public IActionResult EditUser(User d)
+        {
+
+            workContext.Entry(d).State = EntityState.Modified;
+            workContext.SaveChanges();
+            return Redirect("/Account/GetUsers");
+        }
+        [HttpGet]
+        public IActionResult EditUser(int id)
+        {
+            return View(workContext.Users.Where(x => x.Id == id).FirstOrDefault());
+
+        }
+        [HttpGet]
+        public IActionResult InfoUser(int id)
+        {
+            return View(workContext.Users.Where(x => x.Id == id).FirstOrDefault());
+        }
+
+        public IActionResult DeleteUser(int id, User user)
+        {
+            user = workContext.Users.Where(d => d.Id == id).First();
+            workContext.Users.Remove(user);
+            workContext.SaveChanges();
+            return Redirect("/Account/GetUsers");
+        }
+
 
         public IActionResult Index()
         {

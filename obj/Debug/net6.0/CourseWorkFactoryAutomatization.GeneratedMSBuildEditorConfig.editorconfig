@@ -20,8 +20,16 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxDcmVhdGVVc2VyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/vlsu_works/CourseWorkFactoryAutomatization/Views/Account/EditUser.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxFZGl0VXNlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/vlsu_works/CourseWorkFactoryAutomatization/Views/Account/GetUsers.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxHZXRVc2Vycy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/vlsu_works/CourseWorkFactoryAutomatization/Views/Account/InfoUser.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxJbmZvVXNlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/vlsu_works/CourseWorkFactoryAutomatization/Views/Account/Login.cshtml]
@@ -108,8 +116,8 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVjaG5pY01hbnVhbFxEZWxldGVUZWNobmljTWFudWFsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/vlsu_works/CourseWorkFactoryAutomatization/Views/TechnicManual/EditTechnicCatalog.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVjaG5pY01hbnVhbFxFZGl0VGVjaG5pY0NhdGFsb2cuY3NodG1s
+[D:/vlsu_works/CourseWorkFactoryAutomatization/Views/TechnicManual/EditTechnicManual.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVjaG5pY01hbnVhbFxFZGl0VGVjaG5pY01hbnVhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/vlsu_works/CourseWorkFactoryAutomatization/Views/TechnicManual/GetTechnicManuals.cshtml]
@@ -144,8 +152,16 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlckNhdGFsb2dcQ3JlYXRlVXNlckNhdGFsb2cuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/vlsu_works/CourseWorkFactoryAutomatization/Views/UserCatalog/EditUserCatalog.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlckNhdGFsb2dcRWRpdFVzZXJDYXRhbG9nLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/vlsu_works/CourseWorkFactoryAutomatization/Views/UserCatalog/GetUserCatalogs.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlckNhdGFsb2dcR2V0VXNlckNhdGFsb2dzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/vlsu_works/CourseWorkFactoryAutomatization/Views/UserCatalog/InfoUserCatalog.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlckNhdGFsb2dcSW5mb1VzZXJDYXRhbG9nLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/vlsu_works/CourseWorkFactoryAutomatization/Views/_ViewImports.cshtml]

@@ -5,13 +5,12 @@
     Layout = "_Layout_SuperVisor";
 }
 
-<h1>EditTechnicCatalog</h1>
+<h1>Отредактировать данные каталога</h1>
 
-<h4>TechnicManual</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="EditTechnicCatalog">
+        <form asp-action="EditTechnicManual">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Id" />
             <div class="form-group">
@@ -27,7 +26,7 @@
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index">Назад к общему списку</a>
 </div>
 
 @section Scripts {

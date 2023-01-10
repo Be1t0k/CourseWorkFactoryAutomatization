@@ -53,7 +53,7 @@ namespace CourseWorkFactoryAutomatization.Controllers
         }
 
         // POST: DetailCatalog/Edit/5
-        public IActionResult EditTechnicCatalog(TechnicManual tm)
+        public IActionResult EditTechnicManual(TechnicManual tm)
         {
             workContext.Entry(tm).State = EntityState.Modified;
             workContext.SaveChanges();
@@ -61,7 +61,7 @@ namespace CourseWorkFactoryAutomatization.Controllers
         }
 
         [HttpGet]
-        public IActionResult EditTechnicCatalog(int id)
+        public IActionResult EditTechnicManual(int id)
         {
             return View(workContext.TechnicManuals.Where(x => x.Id == id).FirstOrDefault());
         }

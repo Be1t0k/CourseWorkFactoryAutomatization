@@ -1,0 +1,23 @@
+﻿@model CourseWorkFactoryAutomatization.Models.UserCatalog
+
+@{
+    ViewData["Title"] = "InfoUserCatalog";
+}
+
+<h1>Информация о каталоге</h1>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DateCreate)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DateCreate)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="EditUserCatalog" asp-route-id="@Model?.Id">Редактировать</a> |
+    <a asp-action="GetUserCatalogs">Назад к общему списку</a>
+</div>

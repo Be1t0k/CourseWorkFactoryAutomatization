@@ -17,6 +17,18 @@ namespace CourseWorkFactoryAutomatization.Controllers
         {
             return View();
         }
+        public IActionResult Index_Accountant()
+        {
+            return View();
+        }
+        public IActionResult Index_SuperVisor()
+        {
+            return View();
+        }
+        public IActionResult Index_Admin()
+        {
+            return View();
+        }
 
         public IActionResult Privacy()
         {

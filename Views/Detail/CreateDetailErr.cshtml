@@ -1,0 +1,48 @@
+﻿@model CourseWorkFactoryAutomatization.Models.Detail
+
+@{
+    ViewData["Title"] = "CreateDetailErr";
+    Layout = "_Layout_Accountant";
+}
+
+<h1>CreateDetailErr</h1>
+
+<h4>Detail</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="CreateDetailErr">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <p class="text-danger">Этот материал уже добавлен. Измените данные.</p>
+            <div class="form-group">
+                <label asp-for="Title" class="control-label"></label>
+                <input asp-for="Title" class="form-control" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Cost" class="control-label"></label>
+                <input asp-for="Cost" class="form-control" />
+                <span asp-validation-for="Cost" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TechnicId" class="control-label"></label>
+                <select asp-for="TechnicId" class="form-control" asp-items="ViewBag.Technics"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="DetailCatalogId" class="control-label"></label>
+                <select asp-for="DetailCatalogId" class="form-control" asp-items="ViewBag.DetailCatalogs"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

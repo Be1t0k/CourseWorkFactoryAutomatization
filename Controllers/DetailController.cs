@@ -30,11 +30,25 @@ namespace CourseWorkFactoryAutomatization.Controllers
             return View();
         }
         [HttpPost]
-        public IActionResult CreateDetail(Detail d)
+        public IActionResult CreateDetail([Bind("Title,Cost,TechnicId,DetailCatalogId")] Detail d)
         {
-            workContext.Details.Add(d);
-            workContext.SaveChanges();
-            return Redirect("/Detail/GetDetails");
+            bool exists = workContext.Details.Any(u => u.Title == d.Title&& u.Cost == d.Cost);
+            Console.WriteLine(exists);
+            if (exists == false)
+            {
+                workContext.Details.Add(d);
+                workContext.SaveChanges();
+                return Redirect("/Detail/GetDetails");
+            }
+            else
+            {
+                IEnumerable<Technic> technics = workContext.Technics.ToList();
+                ViewBag.Technics = new SelectList(technics, "Id", "Title");
+                IEnumerable<DetailCatalog> detailCatalogs = workContext.DetailCatalogs.ToList();
+                ViewBag.DetailCatalogs = new SelectList(detailCatalogs, "Id", "DateCreate");
+                return Redirect("/Detail/CreateDetailErr");
+            }
+            
         }
 
         public IActionResult GetDetails()
@@ -85,6 +99,15 @@ namespace CourseWorkFactoryAutomatization.Controllers
         {
             ViewBag.Groupps = workContext.Details.GroupBy(p => p.Title)
                   .Select(g => new { Title = g.Key, Countt = g.Count() }).ToList();
+            return View();
+        }
+        [HttpGet]
+        public IActionResult CreateDetailErr()
+        {
+            IEnumerable<Technic> technics = workContext.Technics.ToList();
+            ViewBag.Technics = new SelectList(technics, "Id", "Title");
+            IEnumerable<DetailCatalog> detailCatalogs = workContext.DetailCatalogs.ToList();
+            ViewBag.DetailCatalogs = new SelectList(detailCatalogs, "Id", "DateCreate");
             return View();
         }
     }
